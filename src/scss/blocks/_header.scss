@@ -1,0 +1,48 @@
+.header {
+  margin: 0 auto;
+  width: 100%;
+  height: 40px;
+  margin-top: 32px;
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__search {
+    &__wrapper {
+      display: flex;
+      column-gap: 32px;
+      
+      height: 25px;
+    }
+    &__placeholder input {
+      width: 320px;
+      height: 25px;
+    }
+    &__button {
+      color: $color__accent;
+      font-weight: 600;
+      text-align: center;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  &__button__login {
+    width: 113px;
+    height: 38px;
+    background-color: $color__accent;
+    color: $color__white;
+    border-radius: 4px;
+  }
+}
+.logo {
+  background-image: url(../images/logo.svg);
+  width: 182px;
+  height: 36px;
+}
+.input__line {
+    width: 100%;
+    height: 1px;
+    background-color: $color__main;
+}
