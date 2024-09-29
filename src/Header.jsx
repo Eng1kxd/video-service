@@ -4,8 +4,10 @@ import Movies from "./Movies";
 import Tv from "./Tv";
 import Tabs from "./Tabs";
 import Modal from "./Modal";
+import { useState } from "react";
 
 function Header() {
+  const [modalActive, setModalActive] = useState(false);
   return (
     <>
       <header className="header">
@@ -20,12 +22,18 @@ function Header() {
             </div>
             <div className="header__search__button">Найти</div>
           </div>
-          <div className="header__button__login">
-            <button className="header__button__login">Войти</button>
+          <div className="header__button__login" onClick={() => setModalActive(true)}>
+            <button
+              className="header__button__login"
+              onClick={() => setModalActive(true)}
+            >
+              Войти
+            </button>
           </div>
         </div>
       </header>
       <Tabs />
+      <Modal active={modalActive} setActive={setModalActive} />
 
       <Routes>
         <Route path="/" element={<Movies />} />
