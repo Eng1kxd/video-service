@@ -15,17 +15,18 @@
     height: 434px;
     &__img {
       &__text {
-        // opacity: 0;
-        // padding: 16px;
-        // color: $color__white;
-        // cursor: inherit;
-        // width: 280px;
-        // height: 370px;
-        // transition: 0.1s linear;
+        opacity: 0;
+        padding: 16px;
+        color: $color__white;
+        cursor: inherit;
+        width: 280px;
+        height: 370px;
+        transition: 0.1s linear;
 
-        // &:hover {
-        //   opacity: 1;
-        // }
+        &:hover {
+          opacity: 1;
+          background-image: url(../images/movies/new/fade.png);
+        }
       }
 
       &-1 {
@@ -48,9 +49,9 @@
         border-radius: 8px;
         cursor: pointer;
 
-        &:hover {
-          background-image: url(../images/movies/new/img3HoverBg.png);
-        }
+        // &:hover {
+        //   background-image: url(../images/movies/new/img3HoverBg.png);
+        // }
       }
       &-4 {
         background-image: url(../images/movies/new/img4.jpg);
@@ -127,4 +128,48 @@
   transform: translateY(-50%);
   width: 48px;
   height: 48px;
+}
+.cursor-poiner {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1213px) {
+  .new {
+    width: 580px;
+    height: 898px;
+    margin: auto;
+    &__wrapper {
+      flex-wrap: wrap;
+    }
+    &__card {
+      height: 444px;
+    }
+  }
+  .genres {
+    width: 580px;
+    height: 444px;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+  .genres__title {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 24px;
+  }
+}
+@media screen and (max-width: 610px) {
+  .new {
+    width: 300px;
+    height: 1776px;
+    margin: auto;
+    &__wrapper {
+      flex-wrap: wrap;
+    }
+  }
+  .genres {
+    width: 300px;
+    height: 912px;
+    flex-wrap: wrap;
+    margin: auto;
+  }
 }
