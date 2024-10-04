@@ -29,3 +29,9 @@
   background-color: $color__accent;
 }
 }
+@media screen and (max-width:326px) {
+  .tabs {
+    font-size: 25px;
+    width: 290px;
+  }  
+}
