@@ -22,6 +22,19 @@ function Header() {
       setStoredName(data);
     }
   }, []);
+
+  const [hasData, setHasData] = useState(false);
+
+  useEffect(() => {
+    const storedData = localStorage.getItem("user");
+    setHasData(!!storedData);
+  }, []);
+
+  const clearData = () => {
+    localStorage.removeItem("user");
+    setHasData(false);
+  };
+
   return (
     <>
       <header className="header">
@@ -32,28 +45,31 @@ function Header() {
           </Link>
 
           <div className="header__search__wrapper">
-            <div className="filler">
-              <div className="header__search__placeholder">
-                <input
-                  type="text"
-                  placeholder="Поиск..."
-                  className="header__search__placeholder"
-                />
-                <div className="input__line"></div>
-              </div>
-
-              <div className="header__search__button">Найти</div>
+            <div className="header__search__placeholder">
+              <input
+                type="text"
+                placeholder="Поиск..."
+                className="header__search__placeholder"
+              />
+              <div className="input__line"></div>
             </div>
+
+            <div className="header__search__button">Найти</div>
           </div>
           <div className="header__button__login__wrapper">
             <UserInput />
-            <button
-              className="header__button__login"
-              onClick={() => setModalActive(true)}
-            >
-              Войти
-            </button>
-            {/* header__button__logout */}
+            {hasData ? (
+              <button className="header__button__logout" onClick={clearData}>
+                Выйти
+              </button>
+            ) : (
+              <button
+                className="header__button__login"
+                onClick={() => setModalActive(true)}
+              >
+                Войти
+              </button>
+            )}
           </div>
         </div>
       </header>
