@@ -41,6 +41,9 @@
     background-color: $color__accent;
     color: $color__white;
     border-radius: 4px;
+    &:hover {
+      background-color: $color__accent_hover;
+    }
     &__wrapper {
       display: flex;
       align-items: center;

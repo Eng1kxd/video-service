@@ -80,21 +80,34 @@
       width: 280px;
       height: 208px;
       background-image: url(../images/movies/genres/img1.png);
+      opacity: 0.8;
     }
     &-2 {
       width: 280px;
       height: 208px;
       background-image: url(../images/movies/genres/img2.png);
+      opacity: 0.8;
     }
     &-3 {
       width: 280px;
       height: 208px;
       background-image: url(../images/movies/genres/img3.png);
+      opacity: 0.8;
     }
     &-4 {
       width: 280px;
       height: 208px;
       background-image: url(../images/movies/genres/img4.png);
+      opacity: 0.8;
+    }
+    &-1,
+    &-2,
+    &-3,
+    &-4 {
+      transition: 0.3s;
+      &:hover {
+        opacity: 1;
+      }
     }
   }
   &__smile {
@@ -132,7 +145,10 @@
 .cursor-poiner {
   cursor: pointer;
 }
-
+#password {
+  -webkit-text-security: disc;
+  text-security: disc;
+}
 @media screen and (max-width: 1213px) {
   .new {
     width: 580px;
